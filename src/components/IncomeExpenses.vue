@@ -2,11 +2,11 @@
   <div class="inc-exp-container">
     <div>
       <h4>Income</h4>
-      <p id="money-plus" class="money plus">+${{ income }}</p>
+      <h1 id="money-plus" class="money plus">+₱{{ income }}</h1>
     </div>
     <div>
       <h4>Expense</h4>
-      <p id="money-minus" class="money minus">${{ expenses }}</p>
+      <h1 id="money-minus" class="money minus">&#8369; {{ expenses }}</h1>
     </div>
   </div>
 </template>

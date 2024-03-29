@@ -1,7 +1,9 @@
 <template>
   <div>
     <!-- Your app content -->
-    <input type="checkbox" @click="toggleDarkMode" />Dark Mode
+    <input type="checkbox" @click="toggleDarkMode" />{{
+      isDarkMode ? "light mode off" : "light mode on"
+    }}
   </div>
 </template>
 <script setup>
@@ -13,7 +15,15 @@ const savedTheme = localStorage.getItem("theme");
 const isDarkMode = ref(savedTheme ? savedTheme === "dark" : prefersDark);
 
 watchEffect(() => {
+  //   const divs = document.querySelectorAll("div");
+  //   divs.forEach((div) => {
+  //     div.setAttribute("data-theme", isDarkMode.value ? "dark" : "light");
+  //   });
+
+  //   const PlusList = document.querySelector(".plus");
   document.body.setAttribute("data-theme", isDarkMode.value ? "dark" : "light");
+
+  //   PlusList.setAttribute("data-theme", isDarkMode.value ? "dark" : "light");
   localStorage.setItem("theme", isDarkMode.value ? "dark" : "light");
 });
 
